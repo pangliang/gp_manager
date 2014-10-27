@@ -53,11 +53,11 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>keyword</key>
-				<string>b</string>
+				<string>gp</string>
 				<key>script</key>
 				<string>php -f ./cmd.php {query}</string>
 				<key>title</key>
-				<string>b add | edit | template</string>
+				<string>gp add | edit | template</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
