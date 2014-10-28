@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string></string>
+	<string>gp_manager</string>
 	<key>connections</key>
 	<dict>
 		<key>34E4099C-5438-4F6E-95D4-CB2E706E73E5</key>
@@ -39,6 +39,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>FF2F5688-2A5D-49EA-A0A7-44B253B94B8D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D49374C1-0BF0-4935-89B3-BC0B32937F20</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>pangliang</string>
@@ -50,23 +61,6 @@
 	<string>github page manager</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>php -f ./action.php {query}</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>D49374C1-0BF0-4935-89B3-BC0B32937F20</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -124,6 +118,23 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>php -f ./action.php {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>D49374C1-0BF0-4935-89B3-BC0B32937F20</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
@@ -148,6 +159,33 @@
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>gp config</string>
+				<key>script</key>
+				<string>php -f ./cmd.php "config"</string>
+				<key>subtext</key>
+				<string>edit config file</string>
+				<key>title</key>
+				<string>config</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>FF2F5688-2A5D-49EA-A0A7-44B253B94B8D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -161,7 +199,7 @@
 		<key>D49374C1-0BF0-4935-89B3-BC0B32937F20</key>
 		<dict>
 			<key>ypos</key>
-			<real>190</real>
+			<real>370</real>
 		</dict>
 		<key>E42AB508-064B-40DF-BFF0-39DA0B8844B4</key>
 		<dict>
@@ -172,6 +210,11 @@
 		<dict>
 			<key>ypos</key>
 			<real>310</real>
+		</dict>
+		<key>FF2F5688-2A5D-49EA-A0A7-44B253B94B8D</key>
+		<dict>
+			<key>ypos</key>
+			<real>550</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>

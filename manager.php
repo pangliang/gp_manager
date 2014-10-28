@@ -1,11 +1,26 @@
 <?php
 
 class Manager{
-	private $home;
 
-	function __construct($home)
+	private $CMDS = array(
+		"add" => array(
+			"title"=>"add",
+			"subtitle"=>"add {dir}/{title} : add post {title} to dir {dir}",
+			),
+		"edit" => array(
+			"title"=>"edit",
+			"subtitle"=>"edit post filename match *{query}*",
+			),
+		"templet" => array(
+			"title"=>"templet",
+			"subtitle"=>"edit templet which filename match *{query}*",
+			),
+		);
+	private $config;
+
+	function __construct($config)
 	{
-		$this->home = $home;
+		$this->config = $config;
 	}
 
 	function __call($method,$args)
@@ -35,7 +50,7 @@ class Manager{
 		$dir = dirname($args[0]);
 		$title = str_replace($dir."/", "", $args[0]) ;
 		$filename = "$today"."-"."$title".".md";
-		$filapath = $this->home."/_posts/$dir/$filename";
+		$filapath = $this->config['home']."/".$this->config['post_dir']."/$dir/$filename";
 		$result[]=array( 'add', "add $filapath", "add post : $dir/$filename");
 		return $result;
 	}
@@ -43,7 +58,7 @@ class Manager{
 	private function edit($args)
 	{
 		$result = array();
-		$dir = $this->home."/_posts";
+		$dir = $this->config['home']."/".$this->config['post_dir'];
 		$file_list = $this->listFiles($dir);
 		foreach ($file_list as $value) {
 			$filename = $value[1];
@@ -77,6 +92,14 @@ class Manager{
 		{
 			$result[]=array( 'use helper', '', "can't find file which name like *".$args[0]."*", "type different search words ...", null, 'yes', "");
 		}
+		return $result;
+	}
+
+	private function config($args)
+	{
+		$result = array();
+		$dir = exec('pwd');
+		$result[]=array( 'edit', 'open '.$dir."/config.php", 'edit config file');
 		return $result;
 	}
 

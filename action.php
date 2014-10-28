@@ -1,4 +1,5 @@
 <?php
+require_once('config.php');
 
 $query = trim($argv[1]);
 
