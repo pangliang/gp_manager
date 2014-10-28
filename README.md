@@ -23,7 +23,7 @@ alfred keyword is `gp`
 
 ![7da330f5-e6fb-4a48-835b-e7caf2bfb001](https://cloud.githubusercontent.com/assets/3114995/4807774/94768a24-5e98-11e4-9374-e865fd52926b.png)
 
-###Edit default templet:
+##Edit default templet:
 
 	gp templet *search*
 
