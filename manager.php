@@ -63,7 +63,7 @@ class Manager{
 		foreach ($file_list as $value) {
 			$filename = $value[1];
 			$match = $args[0];
-			if(preg_match("/$match/", $filename))
+			if(preg_match("/$match/i", $filename))
 			{
 				$result[]=array( 'edit', 'open '.$value[0], 'edit '.$value[1]);
 			}
@@ -83,7 +83,7 @@ class Manager{
 		foreach ($file_list as $value) {
 			$filename = $value[1];
 			$match = $args[0];
-			if(preg_match("/$match/", $filename))
+			if(preg_match("/$match/i", $filename))
 			{
 				$result[]=array( 'edit', 'open '.$value[0], 'edit '.$value[1]);
 			}
