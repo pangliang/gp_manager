@@ -58,7 +58,7 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>github page manager</string>
+	<string>gp_manager</string>
 	<key>objects</key>
 	<array>
 		<dict>
