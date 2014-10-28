@@ -1,18 +1,6 @@
 <?php
 
 class Manager{
-	private $CMDS = array(
-		"add" => array(
-			"add {title} : add post {title}",
-			"add {dir} {title} : add post {title} to dir {dir}",
-			),
-		"edit" => array(
-			"edit ... : edit post filename match *{search}*",
-			),
-		"templet" => array(
-			"templet {templet_name} : edit templet {templet_name}"
-			),
-		);
 	private $home;
 
 	function __construct($home)
@@ -22,20 +10,7 @@ class Manager{
 
 	function __call($method,$args)
 	{
-		if(!isset($this->CMDS[$method]))
-		{
-			return $this->showUsege();
-		}elseif(count($args) == 0 || count($args[0]) == 0)
-		{
-			return $this->showUsege($method);
-		}else{
-			$datas = $this->$method($args[0]);
-			if(count($datas) == 0)
-			{
-				$datas = $this->showUsege($method);
-			}
-			return $datas;
-		}
+		return $this->$method($args[0]);
 	}
 
 	private function showUsege($action = '')
@@ -43,14 +18,11 @@ class Manager{
 		$result = array();
 		if(!empty($action) && isset($this->CMDS[$action]))
 		{
-			foreach ($this->CMDS[$action] as $value) {
-				$result[]=array( 'use helper', '', $value);
-			}
+			$conf = $this->CMDS[$action];
+			$result[]=array( 'use helper', '', $conf['title'], $conf['subtitle'], null, 'yes', $action." ");
 		}else{
-			foreach ($this->CMDS as $action => $list) {
-				foreach ($list as $value) {
-					$result[]=array( 'use helper', '', $value,  '', null, 'yes', $action);
-				}
+			foreach ($this->CMDS as $action => $conf) {
+				$result[]=array( 'use helper', '', $conf['title'], $conf['subtitle'], null, 'yes', $action." ");
 			}
 		}
 		return $result;
@@ -60,19 +32,11 @@ class Manager{
 	{
 		$result = array();
 		$today = date("Y-m-d");
-		if(!empty($args[1]))
-		{
-			$dir = $args[0];
-			$title = $args[1];
-			$filename = "$today"."-"."$title".".md";
-			$filapath = $this->home."/_posts/$dir/$filename";
-			$result[]=array( 'new', "new $filapath", "add post : $dir/$filename");
-		}else{
-			$title = $args[0];
-			$filename = "$today"."-"."$title".".md";
-			$filapath = $this->home."/_posts/$filename";
-			$result[]=array( 'new', "new $filapath", "add post : $filename");
-		}
+		$dir = dirname($args[0]);
+		$title = str_replace($dir."/", "", $args[0]) ;
+		$filename = "$today"."-"."$title".".md";
+		$filapath = $this->home."/_posts/$dir/$filename";
+		$result[]=array( 'add', "add $filapath", "add post : $dir/$filename");
 		return $result;
 	}
 
@@ -86,8 +50,12 @@ class Manager{
 			$match = $args[0];
 			if(preg_match("/$match/", $filename))
 			{
-				$result[]=array( 'edit', 'open '.$value[0], 'edit post : '.$value[1]);
+				$result[]=array( 'edit', 'open '.$value[0], 'edit '.$value[1]);
 			}
+		}
+		if(count($result) ==0)
+		{
+			$result[]=array( 'use helper', '', "can't find file which name like *".$args[0]."*", "type different search words ...", null, 'yes', "");
 		}
 		return $result;
 	}
@@ -102,8 +70,12 @@ class Manager{
 			$match = $args[0];
 			if(preg_match("/$match/", $filename))
 			{
-				$result[]=array( 'edit', 'open '.$value[0], 'edit templet : '.$value[1]);
+				$result[]=array( 'edit', 'open '.$value[0], 'edit '.$value[1]);
 			}
+		}
+		if(count($result) ==0)
+		{
+			$result[]=array( 'use helper', '', "can't find file which name like *".$args[0]."*", "type different search words ...", null, 'yes', "");
 		}
 		return $result;
 	}
@@ -123,6 +95,26 @@ class Manager{
 		        	}
 		        	else{
 		            	$result[]=array( $filepath, $file);
+		        	}
+		        }
+		        closedir($dh);
+		    }
+		}
+		return $result;
+	}
+
+	private function listDirs($dir)
+	{
+		$result = array();
+		if (is_dir($dir)) {
+		    if ($dh = opendir($dir)) {
+		        while (($file = readdir($dh)) !== false) {
+		        	if ( $file == ".." || $file == ".")
+		        		continue;
+		        	$filepath = $dir."/"."$file";
+		        	if( is_dir($filepath) )
+		        	{
+		        		$result[]=array( $filepath, $file);
 		        	}
 		        }
 		        closedir($dh);

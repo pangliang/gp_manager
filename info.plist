@@ -17,6 +17,28 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>E42AB508-064B-40DF-BFF0-39DA0B8844B4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D49374C1-0BF0-4935-89B3-BC0B32937F20</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>FE735396-F055-48CE-9969-BFB4D4C6FC18</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D49374C1-0BF0-4935-89B3-BC0B32937F20</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>pangliang</string>
@@ -53,11 +75,13 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>keyword</key>
-				<string>gp</string>
+				<string>gp new</string>
 				<key>script</key>
-				<string>php -f ./cmd.php {query}</string>
+				<string>php -f ./cmd.php "add {query}"</string>
+				<key>subtext</key>
+				<string>new post, use filename {query}</string>
 				<key>title</key>
-				<string>gp add | edit | template</string>
+				<string>new</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -67,6 +91,60 @@
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>34E4099C-5438-4F6E-95D4-CB2E706E73E5</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>gp edit</string>
+				<key>script</key>
+				<string>php -f ./cmd.php "edit {query}"</string>
+				<key>subtext</key>
+				<string>edit post which filename like *{query}*</string>
+				<key>title</key>
+				<string>edit</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>FE735396-F055-48CE-9969-BFB4D4C6FC18</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>gp templet</string>
+				<key>script</key>
+				<string>php -f ./cmd.php "templet {query}"</string>
+				<key>subtext</key>
+				<string>edit templet which name like *{query}*</string>
+				<key>title</key>
+				<string>templet</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>E42AB508-064B-40DF-BFF0-39DA0B8844B4</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -84,6 +162,16 @@
 		<dict>
 			<key>ypos</key>
 			<real>190</real>
+		</dict>
+		<key>E42AB508-064B-40DF-BFF0-39DA0B8844B4</key>
+		<dict>
+			<key>ypos</key>
+			<real>430</real>
+		</dict>
+		<key>FE735396-F055-48CE-9969-BFB4D4C6FC18</key>
+		<dict>
+			<key>ypos</key>
+			<real>310</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>

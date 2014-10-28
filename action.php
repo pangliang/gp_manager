@@ -9,7 +9,7 @@ if(!empty($query))
 	if($action == "open")
 	{
 		exec('open "'.$p[0].'"');
-	}elseif($action == "new")
+	}elseif($action == "add")
 	{
 		$pwd = exec("pwd");
 		$template = $pwd."/templets/default.md";
