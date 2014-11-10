@@ -18,7 +18,7 @@ github page manager, alfred workflow
 
 ##How to install
 
-1. download the last release zip: [gp_manager.alfredworkflow.zip](https://github.com/liang8305/gp_manager/releases/download/v1.0/gp_manager.alfredworkflow.zip)
+1. download the last release zip: [gp_manager.alfredworkflow.zip](https://github.com/liang8305/gp_manager/releases)
 1. unzip `gp_manager.alfredworkflow.zip` you will get `gp_manager.alfredworkflow`.
 1. double click the `gp_manager.alfredworkflow` file , alfred will open and install it.
 1. use `gp config` to open config file , and set `home` to your blog dir.
