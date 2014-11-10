@@ -17,11 +17,41 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>513BD38C-BB33-4B7E-94B9-F3F963090A7E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F108A71C-B484-48AA-BD21-1992BDF3994D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>E42AB508-064B-40DF-BFF0-39DA0B8844B4</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>D49374C1-0BF0-4935-89B3-BC0B32937F20</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F108A71C-B484-48AA-BD21-1992BDF3994D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1F53D952-1CB6-4E89-A88E-AAFC5EC53841</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>03D1EDAE-0386-4E63-8697-5BC59F5211DE</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -186,15 +216,114 @@
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>gp paste2image</string>
+				<key>script</key>
+				<string>php -f ./cmd.php "paste2image"</string>
+				<key>subtext</key>
+				<string>save image file from clipboard</string>
+				<key>title</key>
+				<string>paste2image</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>513BD38C-BB33-4B7E-94B9-F3F963090A7E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>1F53D952-1CB6-4E89-A88E-AAFC5EC53841</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>php -f ./action.php {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>F108A71C-B484-48AA-BD21-1992BDF3994D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>save image</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>03D1EDAE-0386-4E63-8697-5BC59F5211DE</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>03D1EDAE-0386-4E63-8697-5BC59F5211DE</key>
+		<dict>
+			<key>ypos</key>
+			<real>790</real>
+		</dict>
+		<key>1F53D952-1CB6-4E89-A88E-AAFC5EC53841</key>
+		<dict>
+			<key>ypos</key>
+			<real>670</real>
+		</dict>
 		<key>34E4099C-5438-4F6E-95D4-CB2E706E73E5</key>
 		<dict>
 			<key>ypos</key>
 			<real>190</real>
+		</dict>
+		<key>513BD38C-BB33-4B7E-94B9-F3F963090A7E</key>
+		<dict>
+			<key>ypos</key>
+			<real>670</real>
 		</dict>
 		<key>D49374C1-0BF0-4935-89B3-BC0B32937F20</key>
 		<dict>
@@ -205,6 +334,11 @@
 		<dict>
 			<key>ypos</key>
 			<real>430</real>
+		</dict>
+		<key>F108A71C-B484-48AA-BD21-1992BDF3994D</key>
+		<dict>
+			<key>ypos</key>
+			<real>670</real>
 		</dict>
 		<key>FE735396-F055-48CE-9969-BFB4D4C6FC18</key>
 		<dict>

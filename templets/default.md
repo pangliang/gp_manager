@@ -1,8 +1,8 @@
 ---
 layout : post
-categories: [无分类]
-tags : [t1, t2]
-keywords : k1, k2
+categories: [ActGameDiary]
+tags : [cocos2dx, 游戏开发]
+keywords : cocos2dx, 游戏开发
 excerpt: 
 ---
 {% include JB/setup %}

@@ -103,6 +103,14 @@ class Manager{
 		return $result;
 	}
 
+	private function paste2image($args)
+	{
+		$result = array();
+		$filepath = $this->config['post_images_dir']."/".date("Ymd")."/".date("YmdHis").".png";
+		$result[]=array( 'paste2image', 'paste2image '.$filepath, "save to $filepath from clipboard");
+		return $result;
+	}
+
 	private function listFiles($dir)
 	{
 		$result = array();
