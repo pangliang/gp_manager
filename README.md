@@ -65,8 +65,10 @@ use `gp config` to open config file , and set `post_images_dir` to which dir you
 ###use
 
 1. do snapshot to clipboard just like `Shift + Cmmand + Control + 4`
+![image](https://cloud.githubusercontent.com/assets/3114995/4971381/4d04ac7e-68da-11e4-8173-a3a06b84302d.png)
 2. use `gp paste2image`
-3. then you and paste the file name
+![image](https://cloud.githubusercontent.com/assets/3114995/4971385/76ff5a60-68da-11e4-9e9c-4e844e9a05bd.png)
+3. then you and paste the file name `/Volumes/f/liang8305.github.com/assets/images/posts/20141110/20141110130825.png
 
 
 

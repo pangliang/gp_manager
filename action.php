@@ -24,7 +24,7 @@ if(!empty($query))
 		$pipe = null;
 		exec("$tool $filepath 2>&1",$pipe,$ret);
 		if($ret == 0){
-			echo $filepath;
+			echo $p[0];
 		}else{
 			echo implode($pipe, "\n" ) ;
 		}
