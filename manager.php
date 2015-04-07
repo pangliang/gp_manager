@@ -111,6 +111,20 @@ class Manager{
 		return $result;
 	}
 
+	private function paste2qiniu($args)
+	{
+		$result = array();
+		$result[]=array( 'paste2qiniu', 'paste2qiniu', "upload image to qiniucdn from clipboard");
+		return $result;
+	}
+
+	private function qiniulogin($args)
+	{
+		$result = array();
+		$result[]=array( 'qiniulogin', 'qiniulogin', "type username pwd");
+		return $result;
+	}
+
 	private function listFiles($dir)
 	{
 		$result = array();
