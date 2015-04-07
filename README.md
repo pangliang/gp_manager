@@ -86,7 +86,7 @@ use `gp config` to open config file , and set `qiniu_bucket` to which bucket you
 ###use
 
 1. do snapshot to clipboard just like `Shift + Cmmand + Control + 4`
-2. use `gp paste2image`
+2. use `gp paste2qiniu`
 ![image](http://qiniucdn.zhaoxiaodan.com/201504/20150407112323.png)
 3. gp_manager will upload image to qiniu bucket, and copy file url to clipboard
 
