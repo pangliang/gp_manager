@@ -5,6 +5,10 @@ github page manager, alfred workflow
 
 #Changelog
 
+* v0.3
+
+> feature: upload snapshot of clipboard to qiniu cdn
+
 * v0.2
 
 > feature: save snapshot of clipboard to file
@@ -57,7 +61,7 @@ it will search the file
   	
 ![70f992ae-3a6d-4e10-9230-074506cbbb0b](https://cloud.githubusercontent.com/assets/3114995/4807792/d1b69604-5e98-11e4-9e24-0ddc24c1de78.png)
 
-##Save snapshot of clipboard
+##Save snapshot of clipboard to file
 
 ###config
 use `gp config` to open config file , and set `post_images_dir` to which dir you want to save the images of post.
@@ -71,7 +75,20 @@ use `gp config` to open config file , and set `post_images_dir` to which dir you
 3. then you and paste the file name `/Volumes/f/liang8305.github.com/assets/images/posts/20141110/20141110130825.png
 
 
+##Save snapshot of clipboard to qiniu cdn
 
+### before use
+1. config
+use `gp config` to open config file , and set `qiniu_bucket` to which bucket you want to upload.
+2. qiniu login  
+![image](http://qiniucdn.zhaoxiaodan.com/201504/20150407112144.png)
+
+###use
+
+1. do snapshot to clipboard just like `Shift + Cmmand + Control + 4`
+2. use `gp paste2image`
+![image](http://qiniucdn.zhaoxiaodan.com/201504/20150407112323.png)
+3. gp_manager will upload image to qiniu bucket, and copy file url to clipboard
 
  
 
