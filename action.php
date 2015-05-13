@@ -41,7 +41,9 @@ if(!empty($query))
 		}
 	}elseif($action == "paste2qiniu")
 	{
-		$filepath = sys_get_temp_dir()."/".date("YmdHis").".png";
+		$filename = date("Ym")."/".date("YmdHis").".png";
+		$filepath = $config["home"]."/".$config['post_images_dir']."/".$filename;
+		exec('mkdir "'.dirname($filepath).'"');
 		$tool = exec("pwd")."/pngpaste";
 		$pipe = null;
 		exec("$tool $filepath 2>&1",$pipe,$ret);
@@ -52,7 +54,7 @@ if(!empty($query))
 		}
 
 		$tool = exec("pwd")."/qboxrsctl";
-		$filename = date("Ym")."/".date("YmdHis").".png";
+		
 		exec("$tool put ".$config["qiniu_bucket"]." ".$filename." $filepath 2>&1",$pipe,$ret);
 		if($ret == 0){
 			echo $config["qiniu_url"]."/".$filename;
