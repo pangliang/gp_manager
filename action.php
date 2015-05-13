@@ -41,7 +41,7 @@ if(!empty($query))
 		}
 	}elseif($action == "paste2qiniu")
 	{
-		$filename = date("Ym")."/".date("YmdHis").".png";
+		$filename = date("Y")."/".date("YmdHis").".png";
 		$filepath = $config["home"]."/".$config['post_images_dir']."/".$filename;
 		exec('mkdir "'.dirname($filepath).'"');
 		$tool = exec("pwd")."/pngpaste";
